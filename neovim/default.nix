@@ -6,8 +6,11 @@ in
 neovim.override {
       configure = {
         packages.vim-ranger.start = with plugins; [ vim-ranger ];
-        packages.minimap.start = with plugins; [ minimap ];
+        #packages.minimap.start = with plugins; [ minimap ];
         packages.vim-bookmarks.start = with plugins; [ vim-bookmarks ];
+        #packages.vim-ripgrep.start = with plugins; [ vim-ripgrep ];
+        #packages.tlaplus.start = with plugins; [ tlaplus ];
+        #packages.repl-vim.start = with plugins; [ repl-vim ];
         customRC = ''
           " vim config
           let mapleader = ","
@@ -80,26 +83,15 @@ neovim.override {
             "ctrlp-vim"
             "nerdtree"
             "nerdcommenter"
-            "Tabular"
-            "matchit-zip"
             "vim-airline"
             "fugitive"
-            "Rename"
-            "gundo-vim"
             "vim-css-color"
-            "deoplete-nvim"
             "vim-gitgutter"
-            "neomake"
-            "Tagbar"
             "vim-trailing-whitespace"
             "vim-multiple-cursors"
             "vim-expand-region"
-            "ghcmod"
-            "vim-addon-nix"
-            "vim-addon-syntax-checker"
             "vim-markdown"
             "vim-nix"
-            "vim-snippets"
             "zenburn"
           ]; }
         ];

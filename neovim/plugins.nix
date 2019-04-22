@@ -9,6 +9,16 @@
     };
   };
 
+  tlaplus = vimUtils.buildVimPluginFrom2Nix {
+    name = "tla";
+    src = fetchgit {
+      url = "https://github.com/hwayne/tla.vim";
+      rev = "0d6d453a401542ce1db247c6fd139ac99b8a5add";
+      sha256 = "1bfxnvx3g5679jan7v5prh7zk0f77m81g8c9ngq75nxdn20ihl7l";
+    };
+    dependencies = [];
+  };
+
   minimap = vimUtils.buildVimPluginFrom2Nix { # created by nix#NixDerivation
     name = "minimap";
     src = fetchgit {
@@ -38,4 +48,25 @@
     };
     dependencies = [];
   };
+
+  vim-ripgrep = vimUtils.buildVimPluginFrom2Nix {
+    name = "vim-ripgrep";
+    src = fetchgit {
+      url = "https://github.com/jremmen/vim-ripgrep";
+      rev = "ec87af6b69387abb3c4449ce8c4040d2d00d745e";
+      sha256 = "1by56rflr0bmnjvcvaa9r228zyrmxwfkzkclxvdfscm7l7n7jnmh";
+    };
+    dependencies = [];
+  };
+
+  repl-vim = vimUtils.buildVimPluginFrom2Nix {
+    name = "repl-vim";
+    src = fetchgit {
+      url = "https://github.com/ujihisa/repl.vim";
+      rev = "d71c5f06da9b15d78adc41fb8f96c833b70bb4fb";
+      sha256 = "1fly5axnhsywxn56xcvy2ba94iybvg90gi32ly5k7pdvpvj9pgc3";
+    };
+    dependencies = [];
+  };
+
 }
