@@ -43,6 +43,7 @@ neovim.override {
           let g:highlightedyank_highlight_duration = 700
           '' +
           ''
+          nnoremap <Leader>w :Websearch <C-R>=expand('<cword>')<cr><cr>
           function! s:init_lynx()
             nnoremap <nowait><buffer> <C-F> i<PageDown><C-\><C-N>
             tnoremap <nowait><buffer> <C-F> <PageDown>
