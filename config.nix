@@ -5,6 +5,7 @@
 
     ranger = import ./ranger/default.nix { inherit pkgs; };
     neovim = import ./neovim/default.nix { inherit pkgs; };
+    lynx = import ./lynx/default.nix { inherit pkgs; };
     weechat = import ./weechat/default.nix { inherit pkgs; };
     swiProlog = import ./swipl/default.nix { inherit pkgs; };
     genson = import ./genson/default.nix { inherit pkgs; };
@@ -19,6 +20,7 @@
 
         ranger
         neovim
+        lynx
         weechat
         zathura
 

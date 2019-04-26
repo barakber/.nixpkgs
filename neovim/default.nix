@@ -8,7 +8,7 @@ neovim.override {
         packages.vim-ranger.start = with plugins; [ vim-ranger ];
         #packages.minimap.start = with plugins; [ minimap ];
         packages.vim-bookmarks.start = with plugins; [ vim-bookmarks ];
-        #packages.vim-ripgrep.start = with plugins; [ vim-ripgrep ];
+        packages.vim-ripgrep.start = with plugins; [ vim-ripgrep ];
         #packages.tlaplus.start = with plugins; [ tlaplus ];
         #packages.repl-vim.start = with plugins; [ repl-vim ];
         customRC = ''
@@ -38,6 +38,9 @@ neovim.override {
           let g:EasyMotion_inc_highlight = 0
           map <Leader>; <Leader><Leader>b
           map ; <Leader><Leader>w
+          '' +
+          '' +
+          let g:highlightedyank_highlight_duration = 700
           '' +
           ''
           function! s:init_lynx()
@@ -74,8 +77,8 @@ neovim.override {
             tnoremap <buffer> <C-C> <C-G><C-\><C-N>
             nnoremap <buffer> <C-C> i<C-G><C-\><C-N>
           endfunction
-          command! -nargs=1 Web       vnew|call termopen('lynx -scrollbar '.shellescape(substitute(<q-args>,'#','%23','g')))|call <SID>init_lynx()
-          command! -nargs=1 Websearch vnew|call termopen('lynx -scrollbar https://duckduckgo.com/?q='.shellescape(substitute(<q-args>,'#','%23','g')))|call <SID>init_lynx()
+          command! -nargs=1 Web       vnew|call termopen('lynx-wrapper -scrollbar '.shellescape(substitute(<q-args>,'#','%23','g')))|call <SID>init_lynx()
+          command! -nargs=1 Websearch vnew|call termopen('lynx-wrapper -scrollbar https://duckduckgo.com/?q='.shellescape(substitute(<q-args>,'#','%23','g')))|call <SID>init_lynx()
           '';
         vam.pluginDictionaries = [
           { names = [
@@ -93,6 +96,7 @@ neovim.override {
             "vim-markdown"
             "vim-nix"
             "zenburn"
+            "vim-highlightedyank"
           ]; }
         ];
       };
