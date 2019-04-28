@@ -43,6 +43,9 @@ neovim.override {
           let g:highlightedyank_highlight_duration = 700
           '' +
           ''
+          nnoremap <Leader>. :CtrlPMRU<CR>
+          '' +
+          ''
           nnoremap <Leader>s :Rg <C-R>=expand('<cword>')<cr><cr>
           '' +
           ''
