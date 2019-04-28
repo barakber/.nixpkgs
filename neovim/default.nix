@@ -39,8 +39,14 @@ neovim.override {
           map <Leader>; <Leader><Leader>b
           map ; <Leader><Leader>w
           '' +
-          '' +
+          ''
           let g:highlightedyank_highlight_duration = 700
+          '' +
+          ''
+          nnoremap <Leader>s :Rg <C-R>=expand('<cword>')<cr><cr>
+          '' +
+          ''
+          nnoremap <Leader>w :Websearch <C-R>=expand('<cword>')<cr><cr>
           '' +
           ''
           nnoremap <Leader>w :Websearch <C-R>=expand('<cword>')<cr><cr>
