@@ -136,6 +136,6 @@ lynx.overrideAttrs (oldAttrs: rec {
   nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ makeWrapper nukeReferences ];
 
   postInstall= ''
-    makeWrapper $out/bin/lynx $out/bin/lynx-wrapper --add-flags "--lss ${lss}"
+    makeWrapper $out/bin/lynx $out/bin/lynx-wrapper --add-flags "-vikeys -lss ${lss}"
   '';
 })
