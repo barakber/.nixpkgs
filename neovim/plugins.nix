@@ -69,4 +69,13 @@
     dependencies = [];
   };
 
+  git-messenger = vimUtils.buildVimPluginFrom2Nix {
+    name = "git-messenger";
+    src = fetchgit {
+      url = "https://github.com/rhysd/git-messenger.vim";
+      rev = "4b436f8b1c9b04b7424a732cecf8b6de81e7bfd9";
+      sha256 = "0mp85kyiwqhqgbc7znv5xgi0xl23zjbbq7agv0h9m2214vbra1rp";
+    };
+    dependencies = [];
+  };
 }

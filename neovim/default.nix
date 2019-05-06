@@ -9,6 +9,7 @@ neovim.override {
         #packages.minimap.start = with plugins; [ minimap ];
         packages.vim-bookmarks.start = with plugins; [ vim-bookmarks ];
         packages.vim-ripgrep.start = with plugins; [ vim-ripgrep ];
+        packages.git-messenger.start = with plugins; [ git-messenger ];
         #packages.tlaplus.start = with plugins; [ tlaplus ];
         #packages.repl-vim.start = with plugins; [ repl-vim ];
         customRC = ''
@@ -88,7 +89,7 @@ neovim.override {
             nnoremap <buffer> <C-C> i<C-G><C-\><C-N>
           endfunction
           command! -nargs=1 Web       vnew|call termopen('lynx-wrapper -scrollbar '.shellescape(substitute(<q-args>,'#','%23','g')))|call <SID>init_lynx()
-          command! -nargs=1 Websearch vnew|call termopen('lynx-wrapper -scrollbar https://duckduckgo.com/?q='.shellescape(substitute(<q-args>,'#','%23','g')))|call <SID>init_lynx()
+          command! -nargs=1 Websearch vnew|call termopen('lynx-wrapper -scrollbar https://duckduckgo.com/lite/?q='.shellescape(substitute(<q-args>,'#','%23','g')))|call <SID>init_lynx()
           '';
         vam.pluginDictionaries = [
           { names = [
