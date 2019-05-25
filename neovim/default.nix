@@ -10,6 +10,7 @@ neovim.override {
         packages.vim-bookmarks.start = with plugins; [ vim-bookmarks ];
         packages.vim-ripgrep.start = with plugins; [ vim-ripgrep ];
         packages.git-messenger.start = with plugins; [ git-messenger ];
+        packages.vim-pandoc-markdown-preview.start = with plugins; [ vim-pandoc-markdown-preview ];
         #packages.tlaplus.start = with plugins; [ tlaplus ];
         #packages.repl-vim.start = with plugins; [ repl-vim ];
         customRC = ''
@@ -48,6 +49,9 @@ neovim.override {
           '' +
           ''
           nnoremap <Leader>s :Rg <C-R>=expand('<cword>')<cr><cr>
+          '' +
+          ''
+          let g:md_pdf_viewer="zathura"
           '' +
           ''
           nnoremap <Leader>w :Websearch <C-R>=expand('<cword>')<cr><cr>
@@ -108,6 +112,8 @@ neovim.override {
             "vim-nix"
             "zenburn"
             "vim-highlightedyank"
+            "vim-pandoc"
+            "vim-pandoc-syntax"
           ]; }
         ];
       };

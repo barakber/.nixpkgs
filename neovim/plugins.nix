@@ -78,4 +78,14 @@
     };
     dependencies = [];
   };
+
+  vim-pandoc-markdown-preview = vimUtils.buildVimPluginFrom2Nix {
+    name = "vim-pandoc-markdown-preview";
+    src = fetchgit {
+      url = "https://github.com/conornewton/vim-pandoc-markdown-preview";
+      rev = "d2f8561ffccff0a670be0fbe06e76d39919855ca";
+      sha256 = "0zmng7zp9vv5ds5js42ybvs0vzwspsc2nk2q7hfya0l09hnqhwip";
+    };
+    dependencies = [];
+  };
 }

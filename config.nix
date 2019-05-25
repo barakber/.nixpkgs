@@ -23,6 +23,7 @@
         lynx
         weechat
         zathura
+        poppler_utils
 
         htop
 

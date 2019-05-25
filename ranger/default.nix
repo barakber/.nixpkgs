@@ -28,6 +28,7 @@ python36Packages.buildPythonApplication rec {
                             binutils
                             xxd
                             git
+                            poppler_utils
                           ];
 
   checkPhase = ''
