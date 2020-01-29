@@ -8,6 +8,9 @@
     lynx = import ./lynx/default.nix { inherit pkgs; };
     weechat = import ./weechat/default.nix { inherit pkgs; };
     swiProlog = import ./swipl/default.nix { inherit pkgs; };
+    code = import ./code/default.nix { inherit pkgs; };
+    skype = import ./skype/default.nix { inherit pkgs; };
+    #nessus = import ./nessus/default.nix { inherit pkgs; };
     #genson = import ./genson/default.nix { inherit pkgs; };
     #json2csv = import ./json2csv/default.nix { inherit pkgs; };
 
@@ -27,6 +30,7 @@
 
         htop
 
+        exa
         ripgrep
         jq
         html-xml-utils
@@ -35,7 +39,13 @@
         #pythonPackages.csvkit
 
         coq
+        (haskell.packages.ghc844.ghcWithPackages (ps: with ps; [Agda]))
         swiProlog
+        code
+
+        skype
+
+        #nessus
       ];
     });
   };

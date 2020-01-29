@@ -10,7 +10,9 @@ neovim.override {
         packages.vim-bookmarks.start = with plugins; [ vim-bookmarks ];
         packages.vim-ripgrep.start = with plugins; [ vim-ripgrep ];
         packages.git-messenger.start = with plugins; [ git-messenger ];
-        packages.vim-pandoc-markdown-preview.start = with plugins; [ vim-pandoc-markdown-preview ];
+        #packages.vim-pandoc-markdown-preview.start = with plugins; [ vim-pandoc-markdown-preview ];
+        packages.rainbow_csv.start = with plugins; [ rainbow_csv ];
+        #packages.LanguageClient-neovim.start = with plugins; [ LanguageClient-neovim ];
         #packages.tlaplus.start = with plugins; [ tlaplus ];
         #packages.repl-vim.start = with plugins; [ repl-vim ];
         customRC = ''
@@ -42,6 +44,9 @@ neovim.override {
           map ; <Leader><Leader>w
           '' +
           ''
+          map <Leader>t :Tabularize /=<CR>
+          '' +
+          ''
           let g:highlightedyank_highlight_duration = 700
           '' +
           ''
@@ -49,6 +54,11 @@ neovim.override {
           '' +
           ''
           nnoremap <Leader>s :Rg <C-R>=expand('<cword>')<cr><cr>
+          '' +
+          ''
+          '' +
+          ''
+          let g:filetype_pl="prolog"
           '' +
           ''
           let g:md_pdf_viewer="zathura"
@@ -114,6 +124,9 @@ neovim.override {
             "vim-highlightedyank"
             "vim-pandoc"
             "vim-pandoc-syntax"
+            "typescript-vim"
+            "Tabular"
+            "agda-vim"
           ]; }
         ];
       };

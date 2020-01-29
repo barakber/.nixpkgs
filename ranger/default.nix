@@ -40,11 +40,14 @@ python36Packages.buildPythonApplication rec {
     substituteInPlace ranger/data/scope.sh \
       --replace "/bin/echo" "echo"
 
+    cp ${rifle} ranger/config/rifle.conf
+
     substituteInPlace ranger/__init__.py \
       --replace "DEFAULT_PAGER = 'less'" "DEFAULT_PAGER = '${stdenv.lib.getBin less}/bin/less'"
     for i in ranger/config/rc.conf doc/config/rc.conf ; do
       substituteInPlace $i --replace /usr/share $out/share
     done
+
     substituteInPlace ranger/config/rc.conf \
       --replace "set preview_script ~/.config/ranger/scope.sh" "set preview_script $out/share/doc/ranger/config/scope.sh"
     substituteInPlace ranger/ext/img_display.py \
@@ -55,4 +58,5 @@ python36Packages.buildPythonApplication rec {
   '';
 
   scope = ./scope.sh;
+  rifle = ./rifle.conf;
 }

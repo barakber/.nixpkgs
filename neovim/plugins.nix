@@ -88,4 +88,33 @@
     };
     dependencies = [];
   };
+
+  rainbow_csv = vimUtils.buildVimPluginFrom2Nix {
+    name = "rainbow_csv";
+    src = fetchgit {
+      url = "https://github.com/mechatroner/rainbow_csv";
+      rev = "9bfe572bdb7303424afaaef656c1502cd634bceb";
+      sha256 = "1ldybgn10p4gq4cbbjrd1r6wslz6l6vzhz33mm0nhbw27w9dx7ww";
+    };
+    dependencies = [];
+  };
+
+  LanguageClient-neovim = vimUtils.buildVimPluginFrom2Nix {
+    name = "LanguageClient-neovim";
+    src = fetchgit {
+      url = "https://github.com/autozimu/LanguageClient-neovim";
+      rev = "109f77ff32c60fb28d406e1801d6b4c2828f7280";
+      sha256 = "1d87gxhah7iw28cily7r9dh2n2pa98lyz4prywmx35gm0gqz6kgn";
+    };
+    dependencies = [];
+  };
+
+  idris-vim = vimUtils.buildVimPluginFrom2Nix {
+    name = "idris-vim";
+    src = fetchgit {
+      url = "https://github.com/idris-hackers/idris-vim";
+      rev = "109f77ff32c60fb28d406e1801d6b4c2828f7280";
+    };
+    dependencies = [];
+  };
 }

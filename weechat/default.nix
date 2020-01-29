@@ -5,12 +5,12 @@ weechat.override {
     plugins = builtins.attrValues (availablePlugins // {
       python = availablePlugins.python.withPackages (ps: with ps; [ pycrypto ]);
     });
-    scripts = with pkgs.weechatScripts; [
-      weechat-xmpp weechat-matrix-bridge wee-slack
-    ];
-    init = ''
-      /set plugins.var.python.jabber.key "val"
-      /python load python/autoload/wee_slack.py
-    '';
+    #scripts = with pkgs.weechatScripts; [
+      #weechat-xmpp weechat-matrix-bridge # wee-slack
+    #];
+    #init = ''
+      #/set plugins.var.python.jabber.key "val"
+      #/python load python/autoload/wee_slack.py
+    #'';
   };
 }
